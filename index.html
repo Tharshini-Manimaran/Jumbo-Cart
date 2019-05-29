@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Watch Karo</title>
+    <link rel="icon" href="images/crop.png">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div class="navbar d-flex">
+        <img src="images/crop.png" class="logo">
+        <div class="navbar-header">WATCH KARO</div>
+        <div><button class="cart-btn" ng-click=showCart()><i class="fas fa-shopping-cart fa-2x"></i></button></div>
+    </div>
+    <div class="group">
+        <div class="d-flex flex-wrap">
+            <div ng-repeat="x in watches" class="card" ng-style="x.style">
+                <img src={{x.imgsrc}} class="card-img" />
+                <div class="text-center">{{x.name}}</div>
+                <div class="text-center">
+                    <span>Price: </span>
+                    <span>&#8377; {{x.cost}}</span>
+                </div>
+                <div><button class="add-to-cart-btn" ng-click=addToCart(x)>Add to Cart</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="show-cart" ng-show="cartShow">
+        <div class="navbar d-flex cart-navbar">
+            <div class="navbar-header ">My cart</div>
+            <div><button class="cart-btn" ng-click=hideCart()>X</button></div>
+        </div>
+        <div class="cart-body">
+            <div ng-repeat="x in cart" class="d-flex cart-card">
+                <img class="cart-img" src="{{x.imgsrc}}" />
+                <div class="card-body" ng-mouseover="showBtn($index)" ng-mouseleave="hideBtn($index)">
+                    <div ng-hide="hide[$index]">{{x.name}}</div>
+                    <div ng-hide="hide[$index]">Price: &#8377; {{x.cost}}</div>
+                    <div ng-hide = "show[$index]" class="font" >
+                        <button class="btn" ng-click="decCount($index)">-</button>
+                        {{cart[$index].count}}
+                        <button class="btn" ng-click="incCount($index)">+</button>
+                    </div>
+                </div>
+                <div class="close-btn" ng-click=remove($index)> <button>X</button> </div>
+            </div>
+            <div class="total">
+                <h1>Total: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8377;{{total}}</h1>
+            </div>
+        </div>
+        <div>
+            <button class = check-btn> Proceed to Checkout </button>
+        </div>
+    </div>
+
+
+</body>
+<script src="homeSer.js"></script>
+
+</html>

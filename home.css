@@ -1,0 +1,132 @@
+body{
+    margin: 0;
+    background: #D4DDE7;
+}
+.card {
+    flex-shrink: 0;
+    height: 450px;
+    width: 24%;
+    margin: 5px auto;
+    /* transition: all 0.1s; */
+}
+.card:hover{
+    margin: 0;
+    padding: 10px;
+}
+.card-img{
+    height: 80%;
+    width: 100%;
+}
+.text-center{
+    text-align: center;
+}
+.d-flex{
+    display: flex;
+}
+.navbar{
+    height: 60px;
+    width: 100%;
+    background: #9CB8D7;
+}
+.navbar-header{
+    width: max-content;
+    font-size: 40px;
+    margin: auto;
+    color: whitesmoke;;
+}
+.logo{
+  height: 100%;
+  width: 100px;
+  margin-left: 30px;
+}
+.cart-btn{
+    height: 100%;
+    width: 75px;
+    background: rgb(25, 174, 201);
+    border: 0;
+    color: lightcyan;
+}
+.add-to-cart-btn{
+    width: 100%;
+    height: 50px;
+    border: 0;
+    font-size: 20px;
+    color: whitesmoke;
+    background: rgb(25, 174, 201);
+}
+.add-to-cart-btn:hover, .cart-btn:hover{
+    border: 2px solid whitesmoke;
+}
+.show-cart{
+    height: 100%;
+    width: 25%;
+    background-color: #A6BCD6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: example 1s linear;
+    /* box-shadow: 10px 0 10px 0 #382d2d; */
+    box-shadow: 5px 10px 8px 10px #3a3333;
+}
+.cart-navbar{
+    background: #3A5A7E;
+}
+.cart-card{
+    width: 95%;
+    height: 100px;
+    margin: 5px auto;
+    background: #5CB8D3;
+}
+.cart-img{
+    height: 100%;
+    width: 30%;
+}
+.btn{
+    font-size: 35px;
+    padding: 0 10px;
+    margin: 0 10px;
+    height: 50px;
+    width: 50px;
+    background: #A3E0E4;
+}
+.card-body{
+    margin: auto;
+    font-size: 20px;
+}
+.close-btn{
+    margin-left: auto;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.group{
+    width: 100%;
+}
+.font{
+  font-size: 30px;
+}
+.check-btn{
+  font-size: 20px;
+  height: 50px;
+  width: 80%;
+  margin-left: 40px;
+  background: #368E93;
+  color: whitesmoke;
+}
+@keyframes example {
+  0%   {right: -400px;}
+  25%  {right: -300px;}
+  50%  {right: -200px;}
+  75%  {right: -100px;}
+  100% {right: 0px;}
+}
+.hide-cart{
+  animation: hideC 1s linear  
+}
+@keyframes hideC {
+  0%   {right: 0px;}
+  25%  {right: -100px;}
+  50%  {right: -200px;}
+  75%  {right: -300px;}
+  100% {right: -400px;}
+}
